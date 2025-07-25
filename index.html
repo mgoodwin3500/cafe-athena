@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Athena - Experience Santorini's Coffee Culture</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Cafe Athena</h1>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h2>Welcome to Cafe Athena</h2>
+                <p>Where Italian coffee traditions meet the serene beauty of Santorini.</p>
+                <button class="order-now-btn">Order Now</button>
+            </div>
+        </section>
+
+        <section id="menu">
+            <h2>Our Menu</h2>
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="coffee">Coffee Delights</button>
+                <button class="category-btn" data-category="non-coffee">Non-Coffee Refreshers</button>
+            </div>
+
+            <div class="menu-items coffee-menu active">
+                </div>
+
+            <div class="menu-items non-coffee-menu">
+                </div>
+        </section>
+
+        <section id="order">
+            <h2>Place Your Order</h2>
+            <div class="order-type">
+                <label><input type="radio" name="orderType" value="dine-in" checked> Dine-in</label>
+                <label><input type="radio" name="orderType" value="take-out"> Take-out</label>
+            </div>
+
+            <div id="cart">
+                <h3>Your Cart</h3>
+                <div id="cart-items">
+                    <p class="empty-cart-message">Your cart is empty.</p>
+                </div>
+                <div class="cart-total">
+                    <strong>Total:</strong> $<span id="cart-total-amount">0.00</span>
+                </div>
+                <button id="checkout-btn">Proceed to Checkout</button>
+            </div>
+
+            <div id="payment-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h3>Payment Details</h3>
+                    <form id="payment-form">
+                        <label for="card-number">Card Number:</label>
+                        <input type="text" id="card-number" required>
+
+                        <label for="expiry-date">Expiry Date (MM/YY):</label>
+                        <input type="text" id="expiry-date" placeholder="MM/YY" required>
+
+                        <label for="cvv">CVV:</label>
+                        <text type="text" id="cvv" required></text>
+
+                        <label for="card-name">Name on Card:</label>
+                        <input type="text" id="card-name" required>
+
+                        <button type="submit">Pay Now</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="confirmation-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h3>Order Confirmed!</h3>
+                    <p>Your order has been successfully placed. Here is your receipt:</p>
+                    <div id="receipt-details">
+                        </div>
+                    <button class="close-button">Close</button>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Coming Soon.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Cafe Athena. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,491 @@
+/* General Body and Font Styling */
+body {
+    font-family: 'Georgia', serif; /* A classic, elegant font */
+    margin: 0;
+    padding: 0;
+    background-color: #F8F8F8; /* Off-white for a soft feel */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Santorini Color Palette */
+:root {
+    --santorini-blue: #3498DB; /* A vibrant, but not overly bright blue */
+    --santorini-white: #FFFFFF;
+    --santorini-accent-blue: #2980B9; /* Slightly darker blue for accents */
+    --santorini-light-grey: #ECF0F1;
+    --santorini-dark-grey: #7F8C8D;
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--santorini-blue);
+    color: var(--santorini-white);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+nav h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-family: 'Playfair Display', serif; /* Or another elegant display font */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: var(--santorini-white);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--santorini-light-grey);
+}
+
+/* Hero Section */
+#hero {
+    background: url('images/santorini-bg.jpg') no-repeat center center/cover;
+    color: var(--santorini-white);
+    text-align: center;
+    padding: 10rem 2rem;
+    height: 60vh; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Slightly darken the background for text readability */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+#hero h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+#hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.order-now-btn {
+    background-color: var(--santorini-white);
+    color: var(--santorini-blue);
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.order-now-btn:hover {
+    background-color: var(--santorini-accent-blue);
+    color: var(--santorini-white);
+}
+
+/* Main Content Sections */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+section {
+    background-color: var(--santorini-white);
+    padding: 3rem;
+    margin-bottom: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: var(--santorini-blue);
+    font-family: 'Playfair Display', serif;
+}
+
+/* Menu Section */
+.menu-categories {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.category-btn {
+    background-color: var(--santorini-light-grey);
+    color: var(--santorini-dark-grey);
+    padding: 0.8rem 1.5rem;
+    border: 1px solid var(--santorini-dark-grey);
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.category-btn.active,
+.category-btn:hover {
+    background-color: var(--santorini-blue);
+    color: var(--santorini-white);
+    border-color: var(--santorini-blue);
+}
+
+.menu-items {
+    display: none; /* Hidden by default, JavaScript will show */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.menu-items.active {
+    display: grid;
+}
+
+.menu-item {
+    background-color: var(--santorini-light-grey);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--santorini-dark-grey);
+}
+
+.menu-item h3 {
+    font-size: 1.5rem;
+    color: var(--santorini-blue);
+    margin: 1rem 0 0.5rem;
+}
+
+.menu-item p {
+    font-size: 1.1rem;
+    color: var(--santorini-dark-grey);
+    margin-bottom: 1rem;
+}
+
+.menu-item .price {
+    font-weight: bold;
+    color: var(--santorini-accent-blue);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.add-to-cart-btn {
+    background-color: var(--santorini-blue);
+    color: var(--santorini-white);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: var(--santorini-accent-blue);
+}
+
+/* Order Section - Cart */
+.order-type {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.order-type label {
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
+#cart {
+    background-color: var(--santorini-light-grey);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#cart h3 {
+    text-align: center;
+    color: var(--santorini-blue);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed var(--santorini-dark-grey);
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item-info {
+    flex-grow: 1;
+}
+
+.cart-item-info span {
+    display: block;
+    font-size: 1.1rem;
+}
+
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-actions button {
+    background-color: var(--santorini-accent-blue);
+    color: var(--santorini-white);
+    border: none;
+    border-radius: 3px;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0 0.3rem;
+}
+
+.cart-item-actions button:hover {
+    background-color: var(--santorini-blue);
+}
+
+.cart-item-actions .remove-item {
+    background-color: #E74C3C; /* Red for remove */
+}
+
+.cart-item-actions .remove-item:hover {
+    background-color: #C0392B;
+}
+
+.cart-total {
+    text-align: right;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--santorini-accent-blue);
+}
+
+#checkout-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--santorini-blue);
+    color: var(--santorini-white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease;
+}
+
+#checkout-btn:hover {
+    background-color: var(--santorini-accent-blue);
+}
+
+/* Modals (Payment and Confirmation) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--santorini-white);
+    margin: auto;
+    padding: 2.5rem;
+    border-radius: 10px;
+    width: 80%; /* Could be responsive */
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.close-button {
+    color: var(--santorini-dark-grey);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--santorini-blue);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#payment-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--santorini-dark-grey);
+}
+
+#payment-form input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--santorini-light-grey);
+    border-radius: 5px;
+}
+
+#payment-form button[type="submit"] {
+    background-color: var(--santorini-blue);
+    color: var(--santorini-white);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: block;
+    width: 100%;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+#payment-form button[type="submit"]:hover {
+    background-color: var(--santorini-accent-blue);
+}
+
+#receipt-details {
+    background-color: var(--santorini-light-grey);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    font-family: 'Courier New', monospace; /* Monospace for receipt feel */
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+#receipt-details div {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed #CCC;
+}
+
+#receipt-details div:last-child {
+    border-bottom: none;
+    font-weight: bold;
+    margin-top: 0.8rem;
+    font-size: 1.1rem;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    background-color: var(--santorini-blue);
+    color: var(--santorini-white);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 1rem;
+    }
+
+    #hero h2 {
+        font-size: 2.5rem;
+    }
+
+    #hero p {
+        font-size: 1.2rem;
+    }
+
+    section {
+        padding: 2rem 1.5rem;
+    }
+
+    .menu-items {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 2rem;
+    }
+}
